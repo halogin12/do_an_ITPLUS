@@ -1,64 +1,49 @@
+<?php include_once 'view/header.php';?>
 <?php 
-    include_once 'include/header_index.php';
-    include_once 'function/home.php';
-    if (isset($_GET['page'])){
+if (isset($_GET['page'])) {
         $page = $_GET['page'];
     }else{
         $page = 'home';
     }
+
+    switch ($page) {
+        case 'home':
+           include_once 'view/home.php';
+            break;
+
+        case 'shop':
+           include_once 'view/shop.php';
+            break;
+
+        case 'blog-details':
+            include_once 'view/blog-details.php';
+                break;
+
+        case 'blog':
+            include_once 'view/blog.php';
+                break;
+
+        case 'contact':
+            include_once 'view/contact.php';
+                break;
+
+        case 'checkout':
+            include_once 'view/checkout.php';
+                break;
+                
+        case 'shop-cart':
+            include_once 'view/shop-cart.php';
+                break;
+
+        case 'product-details': 
+            include_once 'view/product-details.php';
+                break;
+        
+        default:
+            echo "<h2 style='color: red;'>ERROR 404, trang không tồn tại</h2><a href='index.php'>Quay lại</a>";
+            break;
+    }
+
 ?>
 
-    <!-- Page Preloder -->
-    <div id="preloder">
-        <div class="loader"></div>
-    </div>
-
-    <!-- Offcanvas Menu Begin -->
-    <div class="offcanvas-menu-overlay"></div>
-    <?php include_once 'include/offcanvas.php';?>
-    <!-- Offcanvas Menu End -->
-
-    <!-- Header Section Begin -->
-    <?php include_once 'include/header.php'; ?>
-    <!-- Header Section End -->
-
-    <!-- Categories Section Begin -->
-    <?php  
-    include_once 'include/categories.php';
-    ?>
-<!-- Categories Section End -->
-
-<!-- Product Section Begin -->
-    <?php include_once 'include/product.php'; ?>
-<!-- Product Section End -->
-
-<!-- Banner Section Begin -->
-    <?php include_once 'include/banner.php'; ?>
-<!-- Banner Section End -->
-
-<!-- Trend Section Begin -->
-    <?php include_once 'include/trend.php'; ?>
-<!-- Trend Section End -->
-
-<!-- Discount Section Begin -->
-<?php include_once 'include/discount.php'; ?>
-<!-- Discount Section End -->
-
-<!-- Services Section Begin -->
-<?php include_once 'include/services.php'; ?>
-<!-- Services Section End -->
-
-<!-- Instagram Begin -->
-<?php include_once 'include/instagram.php';?>
-<!-- Instagram End -->
-
-<!-- Footer Section Begin -->
-<?php include_once 'include/footer.php'; ?>
-<!-- Footer Section End -->
-
-<!-- Search Begin -->
-<?php include_once 'include/search.php';?>
-<!-- Search End -->
-
-<!-- Js Plugins -->
-<?php include_once 'include/footer_index.php';?>
+<?php include_once 'view/footer.php';?>

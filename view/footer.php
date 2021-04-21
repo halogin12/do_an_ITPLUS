@@ -1,19 +1,20 @@
+<!-- Footer Section Begin -->
 <footer class="footer">
     <div class="container">
         <div class="row">
             <div class="col-lg-4 col-md-6 col-sm-7">
                 <div class="footer__about">
                     <div class="footer__logo">
-                        <a href="./index.html"><img src="img/logo.png" alt=""></a>
+                        <a href="index.php"><img src="assets/img/logo.png" alt=""></a>
                     </div>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
                     cilisis.</p>
                     <div class="footer__payment">
-                        <a href="#"><img src="img/payment/payment-1.png" alt=""></a>
-                        <a href="#"><img src="img/payment/payment-2.png" alt=""></a>
-                        <a href="#"><img src="img/payment/payment-3.png" alt=""></a>
-                        <a href="#"><img src="img/payment/payment-4.png" alt=""></a>
-                        <a href="#"><img src="img/payment/payment-5.png" alt=""></a>
+                        <a href="#"><img src="assets/img/payment/payment-1.png" alt=""></a>
+                        <a href="#"><img src="assets/img/payment/payment-2.png" alt=""></a>
+                        <a href="#"><img src="assets/img/payment/payment-3.png" alt=""></a>
+                        <a href="#"><img src="assets/img/payment/payment-4.png" alt=""></a>
+                        <a href="#"><img src="assets/img/payment/payment-5.png" alt=""></a> 
                     </div>
                 </div>
             </div>
@@ -67,3 +68,29 @@
         </div>
     </div>
 </footer>
+<!-- Footer Section End -->
+
+<!-- Search Begin -->
+<div class="search-model">
+    <div class="h-100 d-flex align-items-center justify-content-center">
+        <div class="search-close-switch">+</div>
+        <form class="search-model-form">
+            <input type="text" id="search-input" placeholder="Search here.....">
+        </form>
+    </div>
+</div>
+<!-- Search End -->
+<!-- Js Plugins -->
+<script src="assets/js/jquery-3.3.1.min.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
+<script src="assets/js/jquery.magnific-popup.min.js"></script>
+<script src="assets/js/jquery-ui.min.js"></script>
+<script src="assets/js/mixitup.min.js"></script>
+<script src="assets/js/jquery.countdown.min.js"></script>
+<script src="assets/js/jquery.slicknav.js"></script>
+<script src="assets/js/owl.carousel.min.js"></script>
+<script src="assets/js/jquery.nicescroll.min.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+
+</html>
