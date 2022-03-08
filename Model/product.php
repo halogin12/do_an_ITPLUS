@@ -4,7 +4,7 @@
  	{	
  		private const dns ='mysql:host=localhost;dbname=php1120e_nhom2';
  		private const user ='root';
- 		private const passw ='';
+ 		private const passw ='minhduc';
  		protected $pdo = null;
  		function __construct()
  		{
