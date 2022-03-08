@@ -29,6 +29,9 @@ Created: Colorib
             var containerEl = document.querySelector('.property__gallery');
             var mixer = mixitup(containerEl);
         }
+        $(document).on('click','.cart-btn',function(e){
+            var mixer = mixitup(null);
+        });
     });
 
     /*------------------
@@ -38,7 +41,7 @@ Created: Colorib
         var bg = $(this).data('setbg');
         $(this).css('background-image', 'url(' + bg + ')');
     });
-
+    
     //Search Switch
     $('.search-switch').on('click', function () {
         $('.search-model').fadeIn(400);
@@ -205,24 +208,24 @@ Created: Colorib
     /*-------------------
 		Quantity change
 	--------------------- */
-    var proQty = $('.pro-qty');
-	proQty.prepend('<span class="dec qtybtn">-</span>');
-	proQty.append('<span class="inc qtybtn">+</span>');
-	proQty.on('click', '.qtybtn', function () {
-		var $button = $(this);
-		var oldValue = $button.parent().find('input').val();
-		if ($button.hasClass('inc')) {
-			var newVal = parseFloat(oldValue) + 1;
-		} else {
-			// Don't allow decrementing below zero
-			if (oldValue > 0) {
-				var newVal = parseFloat(oldValue) - 1;
-			} else {
-				newVal = 0;
-			}
-		}
-		$button.parent().find('input').val(newVal);
-    });
+    // var proQty = $('.pro-qty');
+	// proQty.prepend('<span class="dec qtybtn">-</span>');
+	// proQty.append('<span class="inc qtybtn">+</span>');
+	// proQty.on('click', '.qtybtn', function () {
+	// 	var $button = $(this);
+	// 	var oldValue = $button.parent().find('input').val();
+	// 	if ($button.hasClass('inc')) {
+	// 		var newVal = parseFloat(oldValue) + 1;
+	// 	} else {
+	// 		// Don't allow decrementing below zero
+	// 		if (oldValue > 0) {
+	// 			var newVal = parseFloat(oldValue) - 1;
+	// 		} else {
+	// 			newVal = 0;
+	// 		}
+	// 	}
+	// 	$button.parent().find('input').val(newVal);
+    // });
     
     /*-------------------
 		Radio Btn
@@ -231,5 +234,28 @@ Created: Colorib
         $(".size__btn label").removeClass('active');
         $(this).addClass('active');
     });
-
+    /*-------------------
+        Search
+    ---------------------*/
+    $("#search_input").keyup(function(){
+        $("#form_search").css({'position':'absolute','top':'120px'});
+        $("#show_search").css('margin-top','-530px');
+        let searchText = $(this).val();
+        // console.log(searchText);
+        if (searchText != "") {
+            $.ajax({
+            url: "assets/ajax/action.php",
+            method: "post",
+            data: {
+                query: searchText,
+            },
+            success: function (response) {
+                $("#show-list").html(response);
+            },
+            });
+        } else {
+            $("#show-list").html("");
+        }
+    })
+    
 })(jQuery);
